@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 from django.http import HttpResponse
 
 def changeState(request):
-	req = request.GET.get('val','')
+	req = request.GET['val']
 	if req == '1':
 		current_state = 'Locked'
 	else:
