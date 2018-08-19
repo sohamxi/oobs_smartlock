@@ -18,8 +18,9 @@ class Door:
 	def __init__(self, current_state, servo_pin = 14,led_pin = 17):
 		#self.current_state = self.getCurrentState()
 		GPIO.setmode(GPIO.BCM)
-		self.servo = GPIO.PWM(servo_pin, 50)
+		GPIO.setup(servo_pin, GPIO.OUT)
 		GPIO.setup(led_pin, GPIO.OUT)
+		self.servo = GPIO.PWM(servo_pin, 50)
 		self.current_state=current_state
 	
 	def lockDoor(self):
